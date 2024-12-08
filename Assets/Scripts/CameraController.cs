@@ -5,13 +5,13 @@ using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
-    [FormerlySerializedAs("m_CameraTarget")] [SerializeField]
+    [SerializeField]
     private Transform m_Target;
 
     [SerializeField]
     private float m_FollowSpeed = 10.0f;
 
-    [FormerlySerializedAs("m_TargetOffset")] [SerializeField] 
+    [SerializeField] 
     private Vector3 m_Offset = new Vector3(-5.0f, 5.0f, 0.0f);
 
     private Vector3 m_CurrentVelocity;

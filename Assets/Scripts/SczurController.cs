@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class SczurController : MonoBehaviour
@@ -17,11 +19,16 @@ public class SczurController : MonoBehaviour
     [SerializeField] 
     private float m_MovementSpeed = 10.0f;
 
+    [SerializeField] 
+    private float m_DamageFlickerTime = 0.05f;
+
     private float m_Horizontal = 0.0f;
     private float m_Vertical = 0.0f;
 
     private bool m_FacingRight = true;
     
+    private Coroutine m_FlickereCoroutine;
+
     private void Update()
     {
         m_Horizontal = Input.GetAxis(HORIZONTAL_NAME);
@@ -42,4 +49,41 @@ public class SczurController : MonoBehaviour
         Vector3 translation = (Vector3.forward * m_Vertical + Vector3.right * m_Horizontal) * (m_MovementSpeed * Time.deltaTime);
         transform.Translate(translation);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.GetComponent<Projectile>() != null)
+        {
+            if (m_FlickereCoroutine == null)
+            {
+                m_FlickereCoroutine = StartCoroutine(Flicker());
+            }
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Projectile>() != null)
+        {
+            if (m_FlickereCoroutine == null)
+            {
+                m_FlickereCoroutine = StartCoroutine(Flicker());
+            }
+            Destroy(other.gameObject);
+        }
+    }
+
+    private IEnumerator Flicker()
+    {
+        Color previousColor = m_SpriteRenderer.sharedMaterial.color;
+
+        m_SpriteRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(m_DamageFlickerTime);
+        m_SpriteRenderer.material.color = previousColor;
+
+        m_FlickereCoroutine = null;
+    }
+    
+    
 }
