@@ -66,11 +66,13 @@ public class SczurController : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Projectile>() != null)
         {
+            Destroy(other.gameObject);
+            GameManager.Instance.HandlePlayerHit();
+            
             if (m_FlickereCoroutine == null)
             {
                 m_FlickereCoroutine = StartCoroutine(Flicker());
             }
-            Destroy(other.gameObject);
         }
     }
 
@@ -83,7 +85,6 @@ public class SczurController : MonoBehaviour
         m_SpriteRenderer.material.color = previousColor;
 
         m_FlickereCoroutine = null;
+        Destroy(gameObject);
     }
-    
-    
 }

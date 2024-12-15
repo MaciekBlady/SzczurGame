@@ -18,6 +18,11 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (m_Target == null)
+        {
+            return;
+        }
+        
         transform.position = Vector3.SmoothDamp(
             transform.position, 
             m_Target.position + m_Offset,
