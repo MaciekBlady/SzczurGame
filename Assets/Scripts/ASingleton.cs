@@ -37,7 +37,6 @@ public abstract class ASingleton<T> : MonoBehaviour where T: MonoBehaviour
         if (m_Instance != null && m_Instance != this)
         {
             // If I'm not the m_Instance, I will destroy myself
-            Debug.LogErrorFormat(this, "There's already a singleton of type {0}, destroying copy", GetType());
             Destroy(gameObject);
             return;
         }

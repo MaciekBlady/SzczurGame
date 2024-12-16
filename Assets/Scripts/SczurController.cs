@@ -25,6 +25,7 @@ public class SczurController : MonoBehaviour
     private float m_Horizontal = 0.0f;
     private float m_Vertical = 0.0f;
 
+    [SerializeField] 
     private bool m_FacingRight = true;
     
     private Coroutine m_FlickereCoroutine;
@@ -37,7 +38,7 @@ public class SczurController : MonoBehaviour
         m_Animator.SetFloat(m_AnimatorHorizontal, m_Horizontal);
         m_Animator.SetFloat(m_AnimatorVertical, m_Vertical);
 
-        if (m_FacingRight != m_Horizontal > 0.0f)
+        if ((m_FacingRight && m_Horizontal < -0.1f) || (!m_FacingRight && m_Horizontal > 0.1f))
         {
             m_FacingRight = !m_FacingRight;
             m_SpriteRenderer.flipX = !m_FacingRight;

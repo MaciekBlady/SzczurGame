@@ -51,7 +51,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3a170be8190a96349b235ef3af075d49, type: 2}
+  m_Motion: {fileID: 7400000, guid: d9b24654615ed3b4ab1fc3fac36ba112, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -131,7 +131,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 24d8c30b632a5bf4aa2fb4cff46d1e1f, type: 2}
+  m_Motion: {fileID: 7400000, guid: cecc912769051f44980029a873838da8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -157,7 +157,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 77cbd8bc457dc8d4f83bf535bb7d8294, type: 2}
+  m_Motion: {fileID: 7400000, guid: f8a6018748c165a499de0e6f6510e3bc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -183,7 +183,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 198929625ca56f9478cc6dcf3be7c6f8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 08ea233789d19e944a57a0334c0b3386, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -223,7 +223,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SzczurAnimationController
+  m_Name: SzczurAnimationController_Colored
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Horizontal
@@ -361,7 +361,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9d6af33641f924e40b231065165ffb02, type: 2}
+  m_Motion: {fileID: 7400000, guid: c8248d05414d4dd4a928ab00e374b208, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
